@@ -21,11 +21,13 @@ export interface EquipmentNodeData {
 interface FlowState {
   nodes: Node[];
   edges: Edge[];
+  customEquipment: Equipment[];
   onNodesChange: OnNodesChange;
   onEdgesChange: OnEdgesChange;
   onConnect: OnConnect;
   addEquipmentNode: (equipment: Equipment, position: { x: number; y: number }) => void;
   deleteNode: (nodeId: string) => void;
+  addCustomEquipment: (equipment: Equipment) => void;
   projectTitle: string;
   setProjectTitle: (title: string) => void;
 }
@@ -45,6 +47,7 @@ function getEdgeStyle(sourcePortType?: SignalType) {
 export const useFlowStore = create<FlowState>((set, get) => ({
   nodes: [],
   edges: [],
+  customEquipment: [],
   projectTitle: "新規プロジェクト",
 
   setProjectTitle: (title: string) => set({ projectTitle: title }),
@@ -106,6 +109,10 @@ export const useFlowStore = create<FlowState>((set, get) => ({
       } as EquipmentNodeData,
     };
     set({ nodes: [...get().nodes, newNode] });
+  },
+
+  addCustomEquipment: (equipment: Equipment) => {
+    set({ customEquipment: [...get().customEquipment, equipment] });
   },
 
   deleteNode: (nodeId: string) => {

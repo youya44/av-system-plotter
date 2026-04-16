@@ -13,6 +13,7 @@ import {
   Equipment,
 } from "@/data/types";
 import { useFlowStore } from "@/store/flow-store";
+import { CustomEquipmentDialog } from "./CustomEquipmentDialog";
 
 const CATEGORY_ORDER: EquipmentCategory[] = [
   "camera",
@@ -35,16 +36,24 @@ export function EquipmentLibrary() {
     new Set(["switcher", "camera", "mixer"])
   );
   const addEquipmentNode = useFlowStore((s) => s.addEquipmentNode);
+  const customEquipment = useFlowStore((s) => s.customEquipment);
+  const addCustomEquipment = useFlowStore((s) => s.addCustomEquipment);
+
+  const allEquipment = useMemo(
+    () => [...equipmentDatabase, ...customEquipment],
+    [customEquipment]
+  );
 
   const grouped = useMemo(() => {
     const map = new Map<EquipmentCategory, Equipment[]>();
-    for (const eq of equipmentDatabase) {
+    for (const eq of allEquipment) {
       const lowerSearch = search.toLowerCase();
       if (
         search &&
         !eq.name.toLowerCase().includes(lowerSearch) &&
         !eq.manufacturer.toLowerCase().includes(lowerSearch) &&
-        !CATEGORY_LABELS[eq.category].includes(search)
+        !CATEGORY_LABELS[eq.category].includes(search) &&
+        !(eq.subcategory?.toLowerCase().includes(lowerSearch))
       ) {
         continue;
       }
@@ -52,7 +61,7 @@ export function EquipmentLibrary() {
       map.get(eq.category)!.push(eq);
     }
     return map;
-  }, [search]);
+  }, [search, allEquipment]);
 
   const toggleCategory = (cat: EquipmentCategory) => {
     setExpandedCategories((prev) => {
@@ -72,6 +81,12 @@ export function EquipmentLibrary() {
     const x = 300 + Math.random() * 200;
     const y = 100 + Math.random() * 300;
     addEquipmentNode(equipment, { x, y });
+  };
+
+  const handleAddCustom = (equipment: Equipment) => {
+    addCustomEquipment(equipment);
+    // Also place it on canvas
+    addEquipmentNode(equipment, { x: 400, y: 200 });
   };
 
   return (
@@ -118,7 +133,7 @@ export function EquipmentLibrary() {
                         onDragStart={(e) => handleDragStart(e, eq)}
                         onClick={() => handleClick(eq)}
                         className="flex items-center gap-2 px-2 py-1.5 text-xs rounded cursor-grab hover:bg-blue-950/50 active:cursor-grabbing transition-colors border border-transparent hover:border-blue-800"
-                        title={`${eq.manufacturer} ${eq.name}\nクリックで配置 / ドラッグ&ドロップ`}
+                        title={`${eq.manufacturer} ${eq.name}${eq.description ? `\n${eq.description}` : ""}\nクリックで配置 / ドラッグ&ドロップ`}
                       >
                         <div
                           className="w-2 h-2 rounded-full shrink-0"
@@ -147,8 +162,12 @@ export function EquipmentLibrary() {
         </div>
       </ScrollArea>
 
-      <div className="p-2 border-t border-gray-800 text-[10px] text-gray-500 text-center">
-        {equipmentDatabase.length}機種収録
+      <div className="p-2 border-t border-gray-800 space-y-2">
+        <CustomEquipmentDialog onAdd={handleAddCustom} />
+        <div className="text-[10px] text-gray-500 text-center">
+          {allEquipment.length}機種収録
+          {customEquipment.length > 0 && ` (カスタム${customEquipment.length})`}
+        </div>
       </div>
     </div>
   );
