@@ -51,6 +51,7 @@ export type EquipmentCategory =
   | "speaker"
   | "recorder"
   | "converter"
+  | "cable"
   | "other";
 
 // 端子定義
@@ -120,6 +121,7 @@ export const CATEGORY_LABELS: Record<EquipmentCategory, string> = {
   speaker: "スピーカー",
   recorder: "レコーダー",
   converter: "変換器",
+  cable: "ケーブル",
   other: "その他",
 };
 
@@ -136,5 +138,6 @@ export const CATEGORY_ICONS: Record<EquipmentCategory, string> = {
   speaker: "🔊",
   recorder: "⏺️",
   converter: "🔄",
+  cable: "🔌",
   other: "📦",
 };

@@ -1011,6 +1011,270 @@ export const equipmentDatabase: Equipment[] = [
   },
 
   // =====================
+  // ケーブル（映像系）
+  // =====================
+  // HDMI
+  { id: "cable-hdmi-05m", name: "HDMI 0.5m", manufacturer: "ケーブル", category: "cable", subcategory: "HDMI", color: "#3B82F6",
+    ports: [
+      { id: "in", label: "IN", type: "hdmi", direction: "input", connector: "hdmi-a" },
+      { id: "out", label: "OUT", type: "hdmi", direction: "output", connector: "hdmi-a" },
+    ],
+  },
+  { id: "cable-hdmi-1m", name: "HDMI 1m", manufacturer: "ケーブル", category: "cable", subcategory: "HDMI", color: "#3B82F6",
+    ports: [
+      { id: "in", label: "IN", type: "hdmi", direction: "input", connector: "hdmi-a" },
+      { id: "out", label: "OUT", type: "hdmi", direction: "output", connector: "hdmi-a" },
+    ],
+  },
+  { id: "cable-hdmi-2m", name: "HDMI 2m", manufacturer: "ケーブル", category: "cable", subcategory: "HDMI", color: "#3B82F6",
+    ports: [
+      { id: "in", label: "IN", type: "hdmi", direction: "input", connector: "hdmi-a" },
+      { id: "out", label: "OUT", type: "hdmi", direction: "output", connector: "hdmi-a" },
+    ],
+  },
+  { id: "cable-hdmi-3m", name: "HDMI 3m", manufacturer: "ケーブル", category: "cable", subcategory: "HDMI", color: "#3B82F6",
+    ports: [
+      { id: "in", label: "IN", type: "hdmi", direction: "input", connector: "hdmi-a" },
+      { id: "out", label: "OUT", type: "hdmi", direction: "output", connector: "hdmi-a" },
+    ],
+  },
+  { id: "cable-hdmi-5m", name: "HDMI 5m", manufacturer: "ケーブル", category: "cable", subcategory: "HDMI", color: "#3B82F6",
+    ports: [
+      { id: "in", label: "IN", type: "hdmi", direction: "input", connector: "hdmi-a" },
+      { id: "out", label: "OUT", type: "hdmi", direction: "output", connector: "hdmi-a" },
+    ],
+  },
+  { id: "cable-hdmi-10m", name: "HDMI 10m", manufacturer: "ケーブル", category: "cable", subcategory: "HDMI", color: "#3B82F6",
+    ports: [
+      { id: "in", label: "IN", type: "hdmi", direction: "input", connector: "hdmi-a" },
+      { id: "out", label: "OUT", type: "hdmi", direction: "output", connector: "hdmi-a" },
+    ],
+  },
+  { id: "cable-hdmi-15m", name: "HDMI 15m", manufacturer: "ケーブル", category: "cable", subcategory: "HDMI", color: "#3B82F6",
+    ports: [
+      { id: "in", label: "IN", type: "hdmi", direction: "input", connector: "hdmi-a" },
+      { id: "out", label: "OUT", type: "hdmi", direction: "output", connector: "hdmi-a" },
+    ],
+  },
+  { id: "cable-hdmi-20m", name: "HDMI 20m", manufacturer: "ケーブル", category: "cable", subcategory: "HDMI", color: "#3B82F6",
+    description: "光ファイバーHDMI推奨",
+    ports: [
+      { id: "in", label: "IN", type: "hdmi", direction: "input", connector: "hdmi-a" },
+      { id: "out", label: "OUT", type: "hdmi", direction: "output", connector: "hdmi-a" },
+    ],
+  },
+  // Micro HDMI → HDMI
+  { id: "cable-microhdmi-1m", name: "Micro HDMI→HDMI 1m", manufacturer: "ケーブル", category: "cable", subcategory: "HDMI", color: "#3B82F6",
+    ports: [
+      { id: "in", label: "Micro", type: "hdmi", direction: "input", connector: "hdmi-d" },
+      { id: "out", label: "HDMI", type: "hdmi", direction: "output", connector: "hdmi-a" },
+    ],
+  },
+  { id: "cable-microhdmi-2m", name: "Micro HDMI→HDMI 2m", manufacturer: "ケーブル", category: "cable", subcategory: "HDMI", color: "#3B82F6",
+    ports: [
+      { id: "in", label: "Micro", type: "hdmi", direction: "input", connector: "hdmi-d" },
+      { id: "out", label: "HDMI", type: "hdmi", direction: "output", connector: "hdmi-a" },
+    ],
+  },
+  // SDI
+  { id: "cable-sdi-1m", name: "SDI 1m", manufacturer: "ケーブル", category: "cable", subcategory: "SDI", color: "#8B5CF6",
+    ports: [
+      { id: "in", label: "IN", type: "sdi", direction: "input", connector: "bnc" },
+      { id: "out", label: "OUT", type: "sdi", direction: "output", connector: "bnc" },
+    ],
+  },
+  { id: "cable-sdi-3m", name: "SDI 3m", manufacturer: "ケーブル", category: "cable", subcategory: "SDI", color: "#8B5CF6",
+    ports: [
+      { id: "in", label: "IN", type: "sdi", direction: "input", connector: "bnc" },
+      { id: "out", label: "OUT", type: "sdi", direction: "output", connector: "bnc" },
+    ],
+  },
+  { id: "cable-sdi-5m", name: "SDI 5m", manufacturer: "ケーブル", category: "cable", subcategory: "SDI", color: "#8B5CF6",
+    ports: [
+      { id: "in", label: "IN", type: "sdi", direction: "input", connector: "bnc" },
+      { id: "out", label: "OUT", type: "sdi", direction: "output", connector: "bnc" },
+    ],
+  },
+  { id: "cable-sdi-10m", name: "SDI 10m", manufacturer: "ケーブル", category: "cable", subcategory: "SDI", color: "#8B5CF6",
+    ports: [
+      { id: "in", label: "IN", type: "sdi", direction: "input", connector: "bnc" },
+      { id: "out", label: "OUT", type: "sdi", direction: "output", connector: "bnc" },
+    ],
+  },
+  { id: "cable-sdi-20m", name: "SDI 20m", manufacturer: "ケーブル", category: "cable", subcategory: "SDI", color: "#8B5CF6",
+    ports: [
+      { id: "in", label: "IN", type: "sdi", direction: "input", connector: "bnc" },
+      { id: "out", label: "OUT", type: "sdi", direction: "output", connector: "bnc" },
+    ],
+  },
+  { id: "cable-sdi-30m", name: "SDI 30m", manufacturer: "ケーブル", category: "cable", subcategory: "SDI", color: "#8B5CF6",
+    ports: [
+      { id: "in", label: "IN", type: "sdi", direction: "input", connector: "bnc" },
+      { id: "out", label: "OUT", type: "sdi", direction: "output", connector: "bnc" },
+    ],
+  },
+  { id: "cable-sdi-50m", name: "SDI 50m", manufacturer: "ケーブル", category: "cable", subcategory: "SDI", color: "#8B5CF6",
+    ports: [
+      { id: "in", label: "IN", type: "sdi", direction: "input", connector: "bnc" },
+      { id: "out", label: "OUT", type: "sdi", direction: "output", connector: "bnc" },
+    ],
+  },
+
+  // =====================
+  // ケーブル（音声系）
+  // =====================
+  // XLR
+  { id: "cable-xlr-1m", name: "XLR 1m", manufacturer: "ケーブル", category: "cable", subcategory: "XLR", color: "#10B981",
+    ports: [
+      { id: "in", label: "M", type: "xlr", direction: "input", connector: "xlr-m" },
+      { id: "out", label: "F", type: "xlr", direction: "output", connector: "xlr-f" },
+    ],
+  },
+  { id: "cable-xlr-3m", name: "XLR 3m", manufacturer: "ケーブル", category: "cable", subcategory: "XLR", color: "#10B981",
+    ports: [
+      { id: "in", label: "M", type: "xlr", direction: "input", connector: "xlr-m" },
+      { id: "out", label: "F", type: "xlr", direction: "output", connector: "xlr-f" },
+    ],
+  },
+  { id: "cable-xlr-5m", name: "XLR 5m", manufacturer: "ケーブル", category: "cable", subcategory: "XLR", color: "#10B981",
+    ports: [
+      { id: "in", label: "M", type: "xlr", direction: "input", connector: "xlr-m" },
+      { id: "out", label: "F", type: "xlr", direction: "output", connector: "xlr-f" },
+    ],
+  },
+  { id: "cable-xlr-10m", name: "XLR 10m", manufacturer: "ケーブル", category: "cable", subcategory: "XLR", color: "#10B981",
+    ports: [
+      { id: "in", label: "M", type: "xlr", direction: "input", connector: "xlr-m" },
+      { id: "out", label: "F", type: "xlr", direction: "output", connector: "xlr-f" },
+    ],
+  },
+  { id: "cable-xlr-15m", name: "XLR 15m", manufacturer: "ケーブル", category: "cable", subcategory: "XLR", color: "#10B981",
+    ports: [
+      { id: "in", label: "M", type: "xlr", direction: "input", connector: "xlr-m" },
+      { id: "out", label: "F", type: "xlr", direction: "output", connector: "xlr-f" },
+    ],
+  },
+  { id: "cable-xlr-20m", name: "XLR 20m", manufacturer: "ケーブル", category: "cable", subcategory: "XLR", color: "#10B981",
+    ports: [
+      { id: "in", label: "M", type: "xlr", direction: "input", connector: "xlr-m" },
+      { id: "out", label: "F", type: "xlr", direction: "output", connector: "xlr-f" },
+    ],
+  },
+  // 3.5mm ステレオミニ
+  { id: "cable-35mm-1m", name: "3.5mm 1m", manufacturer: "ケーブル", category: "cable", subcategory: "3.5mm", color: "#34D399",
+    ports: [
+      { id: "in", label: "IN", type: "mini35", direction: "input", connector: "trs-35" },
+      { id: "out", label: "OUT", type: "mini35", direction: "output", connector: "trs-35" },
+    ],
+  },
+  { id: "cable-35mm-3m", name: "3.5mm 3m", manufacturer: "ケーブル", category: "cable", subcategory: "3.5mm", color: "#34D399",
+    ports: [
+      { id: "in", label: "IN", type: "mini35", direction: "input", connector: "trs-35" },
+      { id: "out", label: "OUT", type: "mini35", direction: "output", connector: "trs-35" },
+    ],
+  },
+  // XLR → 3.5mm変換ケーブル
+  { id: "cable-xlr-to-35mm-1m", name: "XLR→3.5mm 1m", manufacturer: "ケーブル", category: "cable", subcategory: "変換", color: "#10B981",
+    description: "XLRマイク→ATEM MIC入力用",
+    ports: [
+      { id: "in", label: "XLR", type: "xlr", direction: "input", connector: "xlr-m" },
+      { id: "out", label: "3.5mm", type: "mini35", direction: "output", connector: "trs-35" },
+    ],
+  },
+  // TRS (6.3mm)
+  { id: "cable-trs-3m", name: "TRS 6.3mm 3m", manufacturer: "ケーブル", category: "cable", subcategory: "TRS", color: "#059669",
+    ports: [
+      { id: "in", label: "IN", type: "trs", direction: "input", connector: "trs-635" },
+      { id: "out", label: "OUT", type: "trs", direction: "output", connector: "trs-635" },
+    ],
+  },
+  { id: "cable-trs-5m", name: "TRS 6.3mm 5m", manufacturer: "ケーブル", category: "cable", subcategory: "TRS", color: "#059669",
+    ports: [
+      { id: "in", label: "IN", type: "trs", direction: "input", connector: "trs-635" },
+      { id: "out", label: "OUT", type: "trs", direction: "output", connector: "trs-635" },
+    ],
+  },
+
+  // =====================
+  // ケーブル（データ/制御系）
+  // =====================
+  // USB-C
+  { id: "cable-usbc-1m", name: "USB-C 1m", manufacturer: "ケーブル", category: "cable", subcategory: "USB", color: "#6B7280",
+    ports: [
+      { id: "in", label: "IN", type: "usb", direction: "input", connector: "usb-c" },
+      { id: "out", label: "OUT", type: "usb", direction: "output", connector: "usb-c" },
+    ],
+  },
+  { id: "cable-usbc-2m", name: "USB-C 2m", manufacturer: "ケーブル", category: "cable", subcategory: "USB", color: "#6B7280",
+    ports: [
+      { id: "in", label: "IN", type: "usb", direction: "input", connector: "usb-c" },
+      { id: "out", label: "OUT", type: "usb", direction: "output", connector: "usb-c" },
+    ],
+  },
+  // USB-C → USB-A
+  { id: "cable-usbc-usba-1m", name: "USB-C→A 1m", manufacturer: "ケーブル", category: "cable", subcategory: "USB", color: "#6B7280",
+    ports: [
+      { id: "in", label: "C", type: "usb", direction: "input", connector: "usb-c" },
+      { id: "out", label: "A", type: "usb", direction: "output", connector: "usb-a" },
+    ],
+  },
+  // Ethernet
+  { id: "cable-lan-1m", name: "LANケーブル 1m", manufacturer: "ケーブル", category: "cable", subcategory: "LAN", color: "#F59E0B",
+    ports: [
+      { id: "in", label: "IN", type: "ethernet", direction: "input", connector: "rj45" },
+      { id: "out", label: "OUT", type: "ethernet", direction: "output", connector: "rj45" },
+    ],
+  },
+  { id: "cable-lan-3m", name: "LANケーブル 3m", manufacturer: "ケーブル", category: "cable", subcategory: "LAN", color: "#F59E0B",
+    ports: [
+      { id: "in", label: "IN", type: "ethernet", direction: "input", connector: "rj45" },
+      { id: "out", label: "OUT", type: "ethernet", direction: "output", connector: "rj45" },
+    ],
+  },
+  { id: "cable-lan-5m", name: "LANケーブル 5m", manufacturer: "ケーブル", category: "cable", subcategory: "LAN", color: "#F59E0B",
+    ports: [
+      { id: "in", label: "IN", type: "ethernet", direction: "input", connector: "rj45" },
+      { id: "out", label: "OUT", type: "ethernet", direction: "output", connector: "rj45" },
+    ],
+  },
+  { id: "cable-lan-10m", name: "LANケーブル 10m", manufacturer: "ケーブル", category: "cable", subcategory: "LAN", color: "#F59E0B",
+    ports: [
+      { id: "in", label: "IN", type: "ethernet", direction: "input", connector: "rj45" },
+      { id: "out", label: "OUT", type: "ethernet", direction: "output", connector: "rj45" },
+    ],
+  },
+  { id: "cable-lan-20m", name: "LANケーブル 20m", manufacturer: "ケーブル", category: "cable", subcategory: "LAN", color: "#F59E0B",
+    ports: [
+      { id: "in", label: "IN", type: "ethernet", direction: "input", connector: "rj45" },
+      { id: "out", label: "OUT", type: "ethernet", direction: "output", connector: "rj45" },
+    ],
+  },
+  // 電源延長
+  { id: "cable-power-5m", name: "電源延長 5m", manufacturer: "ケーブル", category: "cable", subcategory: "電源", color: "#EF4444",
+    ports: [
+      { id: "in", label: "IN", type: "dmx", direction: "input", connector: "none" },
+      { id: "out", label: "OUT", type: "dmx", direction: "output", connector: "none" },
+    ],
+  },
+  { id: "cable-power-10m", name: "電源延長 10m", manufacturer: "ケーブル", category: "cable", subcategory: "電源", color: "#EF4444",
+    ports: [
+      { id: "in", label: "IN", type: "dmx", direction: "input", connector: "none" },
+      { id: "out", label: "OUT", type: "dmx", direction: "output", connector: "none" },
+    ],
+  },
+  { id: "cable-power-tap", name: "電源タップ 6口", manufacturer: "ケーブル", category: "cable", subcategory: "電源", color: "#EF4444",
+    ports: [
+      { id: "in", label: "IN", type: "dmx", direction: "input", connector: "none" },
+      { id: "out1", label: "OUT 1", type: "dmx", direction: "output", connector: "none" },
+      { id: "out2", label: "OUT 2", type: "dmx", direction: "output", connector: "none" },
+      { id: "out3", label: "OUT 3", type: "dmx", direction: "output", connector: "none" },
+      { id: "out4", label: "OUT 4", type: "dmx", direction: "output", connector: "none" },
+      { id: "out5", label: "OUT 5", type: "dmx", direction: "output", connector: "none" },
+      { id: "out6", label: "OUT 6", type: "dmx", direction: "output", connector: "none" },
+    ],
+  },
+
+  // =====================
   // 分配器（DA / ディストリビューター）
   // =====================
   {

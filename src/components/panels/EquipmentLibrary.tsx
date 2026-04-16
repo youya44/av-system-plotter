@@ -24,6 +24,7 @@ const CATEGORY_ORDER: EquipmentCategory[] = [
   "output",
   "capture",
   "converter",
+  "cable",
   "streaming",
   "recorder",
   "other",

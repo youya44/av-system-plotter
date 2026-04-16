@@ -59,7 +59,7 @@ const CONNECTOR_OPTIONS: { value: ConnectorType; label: string; signalTypes: Sig
 
 const CATEGORY_OPTIONS: EquipmentCategory[] = [
   "switcher", "mixer", "camera", "monitor", "output", "capture",
-  "streaming", "microphone", "speaker", "recorder", "converter", "other",
+  "streaming", "microphone", "speaker", "recorder", "converter", "cable", "other",
 ];
 
 function getDefaultConnector(signalType: SignalType, direction: PortDirection): ConnectorType {
