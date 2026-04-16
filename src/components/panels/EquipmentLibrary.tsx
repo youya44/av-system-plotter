@@ -3,7 +3,6 @@
 import React, { useState, useMemo } from "react";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
 import { equipmentDatabase } from "@/data/equipment";
 import {
@@ -91,7 +90,7 @@ export function EquipmentLibrary() {
 
   return (
     <div className="w-64 bg-gray-900 border-r border-gray-800 flex flex-col h-full">
-      <div className="p-3 border-b border-gray-800">
+      <div className="p-3 border-b border-gray-800 shrink-0">
         <h2 className="text-sm font-bold text-gray-200 mb-2">機材ライブラリ</h2>
         <Input
           placeholder="機材を検索..."
@@ -101,7 +100,7 @@ export function EquipmentLibrary() {
         />
       </div>
 
-      <ScrollArea className="flex-1">
+      <div className="flex-1 overflow-y-auto min-h-0">
         <div className="p-2">
           {CATEGORY_ORDER.map((cat) => {
             const items = grouped.get(cat);
@@ -160,9 +159,9 @@ export function EquipmentLibrary() {
             );
           })}
         </div>
-      </ScrollArea>
+      </div>
 
-      <div className="p-2 border-t border-gray-800 space-y-2">
+      <div className="p-2 border-t border-gray-800 space-y-2 shrink-0">
         <CustomEquipmentDialog onAdd={handleAddCustom} />
         <div className="text-[10px] text-gray-500 text-center">
           {allEquipment.length}機種収録
