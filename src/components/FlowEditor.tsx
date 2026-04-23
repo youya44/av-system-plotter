@@ -36,6 +36,7 @@ export function FlowEditor() {
     onEdgesChange,
     onConnect,
     addEquipmentNode,
+    reconnectEdge,
     projectTitle,
     setProjectTitle,
   } = useFlowStore();
@@ -149,6 +150,9 @@ export function FlowEditor() {
             onNodesChange={onNodesChange}
             onEdgesChange={onEdgesChange}
             onConnect={onConnect}
+            onReconnect={reconnectEdge}
+            edgesReconnectable
+            edgesFocusable
             onInit={(instance) => {
               rfInstance.current = instance;
             }}

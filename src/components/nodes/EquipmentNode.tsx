@@ -32,8 +32,13 @@ function EquipmentNodeComponent({ id, data }: NodeProps) {
           </div>
         </div>
         <button
-          className="shrink-0 w-4 h-4 flex items-center justify-center rounded-full bg-white/20 hover:bg-red-500 text-[10px] leading-none transition-colors"
-          onClick={() => deleteNode(id)}
+          className="nodrag nopan shrink-0 w-4 h-4 flex items-center justify-center rounded-full bg-white/20 hover:bg-red-500 text-[10px] leading-none transition-colors cursor-pointer"
+          onPointerDown={(e) => e.stopPropagation()}
+          onMouseDown={(e) => e.stopPropagation()}
+          onClick={(e) => {
+            e.stopPropagation();
+            deleteNode(id);
+          }}
           title="削除"
         >
           x

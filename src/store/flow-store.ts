@@ -7,6 +7,7 @@ import {
   OnConnect,
   applyNodeChanges,
   applyEdgeChanges,
+  reconnectEdge,
   Connection,
   MarkerType,
 } from "@xyflow/react";
@@ -27,6 +28,8 @@ interface FlowState {
   onConnect: OnConnect;
   addEquipmentNode: (equipment: Equipment, position: { x: number; y: number }) => void;
   deleteNode: (nodeId: string) => void;
+  deleteEdge: (edgeId: string) => void;
+  reconnectEdge: (oldEdge: Edge, newConnection: Connection) => void;
   addCustomEquipment: (equipment: Equipment) => void;
   projectTitle: string;
   setProjectTitle: (title: string) => void;
@@ -122,5 +125,37 @@ export const useFlowStore = create<FlowState>((set, get) => ({
         (e) => e.source !== nodeId && e.target !== nodeId
       ),
     });
+  },
+
+  deleteEdge: (edgeId: string) => {
+    set({ edges: get().edges.filter((e) => e.id !== edgeId) });
+  },
+
+  reconnectEdge: (oldEdge: Edge, newConnection: Connection) => {
+    // Re-derive style from the new source port so color/dash follow the new signal
+    const sourceNode = get().nodes.find((n) => n.id === newConnection.source);
+    const nodeData = sourceNode?.data as EquipmentNodeData | undefined;
+    const sourcePort = nodeData?.equipment.ports.find(
+      (p) => p.id === newConnection.sourceHandle
+    );
+    const signalType = sourcePort?.type;
+    const style = getEdgeStyle(signalType);
+
+    const rebuilt: Edge = {
+      ...oldEdge,
+      style,
+      markerEnd: {
+        type: MarkerType.ArrowClosed,
+        color: style.stroke,
+        width: 16,
+        height: 16,
+      },
+      data: {
+        signalType,
+        label: sourcePort?.label || "",
+      },
+    };
+
+    set({ edges: reconnectEdge(rebuilt, newConnection, get().edges) });
   },
 }));
